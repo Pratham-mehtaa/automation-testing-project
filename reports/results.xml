@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="18" skipped="0" tests="54" time="308.653" timestamp="2026-04-27T00:39:56.738615+05:30" hostname="Prathams-MacBook-Air.local"><testcase classname="tests.test_cart.TestCart" name="test_add_single_item" time="2.643" /><testcase classname="tests.test_cart.TestCart" name="test_add_multiple_items" time="1.394" /><testcase classname="tests.test_cart.TestCart" name="test_remove_item_from_inventory" time="21.838" /><testcase classname="tests.test_cart.TestCart" name="test_cart_page_shows_items" time="1.485" /><testcase classname="tests.test_cart.TestCart" name="test_remove_item_from_cart_page" time="11.370" /><testcase classname="tests.test_cart.TestCart" name="test_continue_shopping" time="1.251" /><testcase classname="tests.test_cart.TestCart" name="test_cart_persists" time="1.400" /><testcase classname="tests.test_cart.TestCart" name="test_problem_user_add_to_cart" time="1.382" /><testcase classname="tests.test_cart.TestCart" name="test_problem_user_remove" time="11.356" /><testcase classname="tests.test_cart.TestCart" name="test_error_user_add_to_cart" time="1.357" /><testcase classname="tests.test_cart.TestCart" name="test_error_user_remove" time="11.406" /><testcase classname="tests.test_checkout.TestCheckout" name="test_checkout_complete_flow" time="22.018"><failure message="AssertionError: Order should be completed successfully&#10;assert False&#10; +  where False = is_order_complete()&#10; +    where is_order_complete = &lt;pages.checkout_page.CheckoutPage object at 0x10ee8dfd0&gt;.is_order_complete&#10; +      where &lt;pages.checkout_page.CheckoutPage object at 0x10ee8dfd0&gt; = &lt;tests.test_checkout.TestCheckout object at 0x108d499a0&gt;.checkout_page">tests/test_checkout.py:38: in test_checkout_complete_flow
+    assert self.checkout_page.is_order_complete(), (
+E   AssertionError: Order should be completed successfully
+E   assert False
+E    +  where False = is_order_complete()
+E    +    where is_order_complete = &lt;pages.checkout_page.CheckoutPage object at 0x10ee8dfd0&gt;.is_order_complete
+E    +      where &lt;pages.checkout_page.CheckoutPage object at 0x10ee8dfd0&gt; = &lt;tests.test_checkout.TestCheckout object at 0x108d499a0&gt;.checkout_page</failure></testcase><testcase classname="tests.test_checkout.TestCheckout" name="test_checkout_empty_first_name" time="22.468"><failure message="assert False&#10; +  where False = is_error_displayed()&#10; +    where is_error_displayed = &lt;pages.checkout_page.CheckoutPage object at 0x108f02220&gt;.is_error_displayed&#10; +      where &lt;pages.checkout_page.CheckoutPage object at 0x108f02220&gt; = &lt;tests.test_checkout.TestCheckout object at 0x108d49bb0&gt;.checkout_page">tests/test_checkout.py:47: in test_checkout_empty_first_name
+    assert self.checkout_page.is_error_displayed()
+E   assert False
+E    +  where False = is_error_displayed()
+E    +    where is_error_displayed = &lt;pages.checkout_page.CheckoutPage object at 0x108f02220&gt;.is_error_displayed
+E    +      where &lt;pages.checkout_page.CheckoutPage object at 0x108f02220&gt; = &lt;tests.test_checkout.TestCheckout object at 0x108d49bb0&gt;.checkout_page</failure></testcase><testcase classname="tests.test_checkout.TestCheckout" name="test_checkout_empty_last_name" time="1.509" /><testcase classname="tests.test_checkout.TestCheckout" name="test_checkout_empty_postal_code" time="22.062"><failure message="assert False&#10; +  where False = is_error_displayed()&#10; +    where is_error_displayed = &lt;pages.checkout_page.CheckoutPage object at 0x10ee83f10&gt;.is_error_displayed&#10; +      where &lt;pages.checkout_page.CheckoutPage object at 0x10ee83f10&gt; = &lt;tests.test_checkout.TestCheckout object at 0x108d56040&gt;.checkout_page">tests/test_checkout.py:65: in test_checkout_empty_postal_code
+    assert self.checkout_page.is_error_displayed()
+E   assert False
+E    +  where False = is_error_displayed()
+E    +    where is_error_displayed = &lt;pages.checkout_page.CheckoutPage object at 0x10ee83f10&gt;.is_error_displayed
+E    +      where &lt;pages.checkout_page.CheckoutPage object at 0x10ee83f10&gt; = &lt;tests.test_checkout.TestCheckout object at 0x108d56040&gt;.checkout_page</failure></testcase><testcase classname="tests.test_checkout.TestCheckout" name="test_checkout_overview_shows_correct_items" time="11.666"><failure message="AssertionError: assert 'Sauce Labs Backpack' in []&#10; +  where 'Sauce Labs Backpack' = &lt;class 'config.config.Config.Products'&gt;.BACKPACK&#10; +    where &lt;class 'config.config.Config.Products'&gt; = Config.Products">tests/test_checkout.py:77: in test_checkout_overview_shows_correct_items
+    assert Config.Products.BACKPACK in items
+E   AssertionError: assert 'Sauce Labs Backpack' in []
+E    +  where 'Sauce Labs Backpack' = &lt;class 'config.config.Config.Products'&gt;.BACKPACK
+E    +    where &lt;class 'config.config.Config.Products'&gt; = Config.Products</failure></testcase><testcase classname="tests.test_checkout.TestCheckout" name="test_checkout_total_calculation" time="22.092"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;0   chromedriver                        0x0000000103021ebc cxxbridge1$str$ptr + 3213376&#10;1   chromedriver                        0x0000000103019e8c cxxbridge1$str$ptr + 3180560&#10;2   chromedriver                        0x0000000102adf8d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096&#10;3   chromedriver                        0x0000000102b278b4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 369976&#10;4   chromedriver                        0x0000000102b6784c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632016&#10;5   chromedriver                        0x0000000102b1d27c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424&#10;6   chromedriver                        0x0000000102fdff60 cxxbridge1$str$ptr + 2943204&#10;7   chromedriver                        0x0000000102fe3744 cxxbridge1$str$ptr + 2957512&#10;8   chromedriver                        0x0000000102fc4e50 cxxbridge1$str$ptr + 2832340&#10;9   chromedriver                        0x0000000102fe3fc4 cxxbridge1$str$ptr + 2959688&#10;10  chromedriver                        0x0000000102fb5828 cxxbridge1$str$ptr + 2769324&#10;11  chromedriver                        0x0000000103008920 cxxbridge1$str$ptr + 3109540&#10;12  chromedriver                        0x0000000103008a9c cxxbridge1$str$ptr + 3109920&#10;13  chromedriver                        0x0000000103019ae4 cxxbridge1$str$ptr + 3179624&#10;14  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136&#10;15  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8">tests/test_checkout.py:84: in test_checkout_total_calculation
+    subtotal = self.checkout_page.get_subtotal_value()
+pages/checkout_page.py:98: in get_subtotal_value
+    text = self.get_subtotal()  # e.g. "Item total: $29.99"
+pages/checkout_page.py:86: in get_subtotal
+    return self.get_text(self.SUBTOTAL_LABEL)
+pages/base_page.py:87: in get_text
+    return self.find_visible_element(locator).text
+pages/base_page.py:67: in find_visible_element
+    return self.wait.until(EC.visibility_of_element_located(locator))
+.venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:138: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   0   chromedriver                        0x0000000103021ebc cxxbridge1$str$ptr + 3213376
+E   1   chromedriver                        0x0000000103019e8c cxxbridge1$str$ptr + 3180560
+E   2   chromedriver                        0x0000000102adf8d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096
+E   3   chromedriver                        0x0000000102b278b4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 369976
+E   4   chromedriver                        0x0000000102b6784c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632016
+E   5   chromedriver                        0x0000000102b1d27c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424
+E   6   chromedriver                        0x0000000102fdff60 cxxbridge1$str$ptr + 2943204
+E   7   chromedriver                        0x0000000102fe3744 cxxbridge1$str$ptr + 2957512
+E   8   chromedriver                        0x0000000102fc4e50 cxxbridge1$str$ptr + 2832340
+E   9   chromedriver                        0x0000000102fe3fc4 cxxbridge1$str$ptr + 2959688
+E   10  chromedriver                        0x0000000102fb5828 cxxbridge1$str$ptr + 2769324
+E   11  chromedriver                        0x0000000103008920 cxxbridge1$str$ptr + 3109540
+E   12  chromedriver                        0x0000000103008a9c cxxbridge1$str$ptr + 3109920
+E   13  chromedriver                        0x0000000103019ae4 cxxbridge1$str$ptr + 3179624
+E   14  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136
+E   15  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8</failure></testcase><testcase classname="tests.test_checkout.TestCheckout" name="test_checkout_cancel_returns_to_cart" time="1.411" /><testcase classname="tests.test_checkout.TestCheckout" name="test_checkout_back_home_after_complete" time="21.960"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;0   chromedriver                        0x0000000104a99ebc cxxbridge1$str$ptr + 3213376&#10;1   chromedriver                        0x0000000104a91e8c cxxbridge1$str$ptr + 3180560&#10;2   chromedriver                        0x00000001045578d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096&#10;3   chromedriver                        0x000000010459f8b4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 369976&#10;4   chromedriver                        0x00000001045df84c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632016&#10;5   chromedriver                        0x000000010459527c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424&#10;6   chromedriver                        0x0000000104a57f60 cxxbridge1$str$ptr + 2943204&#10;7   chromedriver                        0x0000000104a5b744 cxxbridge1$str$ptr + 2957512&#10;8   chromedriver                        0x0000000104a3ce50 cxxbridge1$str$ptr + 2832340&#10;9   chromedriver                        0x0000000104a5bfc4 cxxbridge1$str$ptr + 2959688&#10;10  chromedriver                        0x0000000104a2d828 cxxbridge1$str$ptr + 2769324&#10;11  chromedriver                        0x0000000104a80920 cxxbridge1$str$ptr + 3109540&#10;12  chromedriver                        0x0000000104a80a9c cxxbridge1$str$ptr + 3109920&#10;13  chromedriver                        0x0000000104a91ae4 cxxbridge1$str$ptr + 3179624&#10;14  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136&#10;15  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8">tests/test_checkout.py:104: in test_checkout_back_home_after_complete
+    self.checkout_page.click_finish()
+pages/checkout_page.py:113: in click_finish
+    self.click(self.FINISH_BUTTON)
+pages/base_page.py:77: in click
+    self.find_clickable_element(locator).click()
+pages/base_page.py:71: in find_clickable_element
+    return self.wait.until(EC.element_to_be_clickable(locator))
+.venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:138: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   0   chromedriver                        0x0000000104a99ebc cxxbridge1$str$ptr + 3213376
+E   1   chromedriver                        0x0000000104a91e8c cxxbridge1$str$ptr + 3180560
+E   2   chromedriver                        0x00000001045578d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096
+E   3   chromedriver                        0x000000010459f8b4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 369976
+E   4   chromedriver                        0x00000001045df84c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632016
+E   5   chromedriver                        0x000000010459527c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424
+E   6   chromedriver                        0x0000000104a57f60 cxxbridge1$str$ptr + 2943204
+E   7   chromedriver                        0x0000000104a5b744 cxxbridge1$str$ptr + 2957512
+E   8   chromedriver                        0x0000000104a3ce50 cxxbridge1$str$ptr + 2832340
+E   9   chromedriver                        0x0000000104a5bfc4 cxxbridge1$str$ptr + 2959688
+E   10  chromedriver                        0x0000000104a2d828 cxxbridge1$str$ptr + 2769324
+E   11  chromedriver                        0x0000000104a80920 cxxbridge1$str$ptr + 3109540
+E   12  chromedriver                        0x0000000104a80a9c cxxbridge1$str$ptr + 3109920
+E   13  chromedriver                        0x0000000104a91ae4 cxxbridge1$str$ptr + 3179624
+E   14  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136
+E   15  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8</failure></testcase><testcase classname="tests.test_checkout.TestCheckout" name="test_problem_user_checkout_info" time="1.488"><failure message="AssertionError: BUG: First name is 'e' instead of 'John'&#10;assert 'e' == 'John'&#10;  &#10;  - John&#10;  + e">tests/test_checkout.py:130: in test_problem_user_checkout_info
+    assert fn == "John", f"BUG: First name is '{fn}' instead of 'John'"
+E   AssertionError: BUG: First name is 'e' instead of 'John'
+E   assert 'e' == 'John'
+E     
+E     - John
+E     + e</failure></testcase><testcase classname="tests.test_checkout.TestCheckout" name="test_problem_user_complete_checkout" time="1.497"><failure message="Failed: BUG: problem_user checkout error: Error: Last Name is required">tests/test_checkout.py:143: in test_problem_user_complete_checkout
+    pytest.fail(f"BUG: problem_user checkout error: {error}")
+E   Failed: BUG: problem_user checkout error: Error: Last Name is required</failure></testcase><testcase classname="tests.test_checkout.TestCheckout" name="test_error_user_checkout_info" time="1.428"><failure message="AssertionError: BUG: error_user Last name is '' instead of 'Doe'&#10;assert '' == 'Doe'&#10;  &#10;  - Doe">tests/test_checkout.py:164: in test_error_user_checkout_info
+    assert ln == "Doe", f"BUG: error_user Last name is '{ln}' instead of 'Doe'"
+E   AssertionError: BUG: error_user Last name is '' instead of 'Doe'
+E   assert '' == 'Doe'
+E     
+E     - Doe</failure></testcase><testcase classname="tests.test_checkout.TestCheckout" name="test_error_user_complete_checkout" time="42.680"><failure message="selenium.common.exceptions.TimeoutException: Message: &#10;Stacktrace:&#10;0   chromedriver                        0x000000010278debc cxxbridge1$str$ptr + 3213376&#10;1   chromedriver                        0x0000000102785e8c cxxbridge1$str$ptr + 3180560&#10;2   chromedriver                        0x000000010224b8d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096&#10;3   chromedriver                        0x00000001022938b4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 369976&#10;4   chromedriver                        0x00000001022d384c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632016&#10;5   chromedriver                        0x000000010228927c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424&#10;6   chromedriver                        0x000000010274bf60 cxxbridge1$str$ptr + 2943204&#10;7   chromedriver                        0x000000010274f744 cxxbridge1$str$ptr + 2957512&#10;8   chromedriver                        0x0000000102730e50 cxxbridge1$str$ptr + 2832340&#10;9   chromedriver                        0x000000010274ffc4 cxxbridge1$str$ptr + 2959688&#10;10  chromedriver                        0x0000000102721828 cxxbridge1$str$ptr + 2769324&#10;11  chromedriver                        0x0000000102774920 cxxbridge1$str$ptr + 3109540&#10;12  chromedriver                        0x0000000102774a9c cxxbridge1$str$ptr + 3109920&#10;13  chromedriver                        0x0000000102785ae4 cxxbridge1$str$ptr + 3179624&#10;14  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136&#10;15  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8">tests/test_checkout.py:176: in test_error_user_complete_checkout
+    self.checkout_page.click_finish()
+pages/checkout_page.py:113: in click_finish
+    self.click(self.FINISH_BUTTON)
+pages/base_page.py:77: in click
+    self.find_clickable_element(locator).click()
+pages/base_page.py:71: in find_clickable_element
+    return self.wait.until(EC.element_to_be_clickable(locator))
+.venv/lib/python3.9/site-packages/selenium/webdriver/support/wait.py:138: in until
+    raise TimeoutException(message, screen, stacktrace)
+E   selenium.common.exceptions.TimeoutException: Message: 
+E   Stacktrace:
+E   0   chromedriver                        0x000000010278debc cxxbridge1$str$ptr + 3213376
+E   1   chromedriver                        0x0000000102785e8c cxxbridge1$str$ptr + 3180560
+E   2   chromedriver                        0x000000010224b8d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096
+E   3   chromedriver                        0x00000001022938b4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 369976
+E   4   chromedriver                        0x00000001022d384c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 632016
+E   5   chromedriver                        0x000000010228927c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424
+E   6   chromedriver                        0x000000010274bf60 cxxbridge1$str$ptr + 2943204
+E   7   chromedriver                        0x000000010274f744 cxxbridge1$str$ptr + 2957512
+E   8   chromedriver                        0x0000000102730e50 cxxbridge1$str$ptr + 2832340
+E   9   chromedriver                        0x000000010274ffc4 cxxbridge1$str$ptr + 2959688
+E   10  chromedriver                        0x0000000102721828 cxxbridge1$str$ptr + 2769324
+E   11  chromedriver                        0x0000000102774920 cxxbridge1$str$ptr + 3109540
+E   12  chromedriver                        0x0000000102774a9c cxxbridge1$str$ptr + 3109920
+E   13  chromedriver                        0x0000000102785ae4 cxxbridge1$str$ptr + 3179624
+E   14  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136
+E   15  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8</failure></testcase><testcase classname="tests.test_login.TestLogin" name="test_login_standard_user" time="1.269" /><testcase classname="tests.test_login.TestLogin" name="test_login_locked_out_user" time="1.266" /><testcase classname="tests.test_login.TestLogin" name="test_login_problem_user" time="1.271" /><testcase classname="tests.test_login.TestLogin" name="test_login_performance_glitch_user" time="6.321" /><testcase classname="tests.test_login.TestLogin" name="test_login_error_user" time="1.312" /><testcase classname="tests.test_login.TestLogin" name="test_login_visual_user" time="1.247" /><testcase classname="tests.test_login.TestLogin" name="test_login_invalid_credentials" time="1.256" /><testcase classname="tests.test_login.TestLogin" name="test_login_empty_username" time="1.250" /><testcase classname="tests.test_login.TestLogin" name="test_login_empty_password" time="1.212" /><testcase classname="tests.test_login.TestLogin" name="test_logout" time="22.506"><failure message="AssertionError: After logout, should be back on login page&#10;assert False&#10; +  where False = is_login_page()&#10; +    where is_login_page = &lt;pages.login_page.LoginPage object at 0x108fa6a30&gt;.is_login_page&#10; +      where &lt;pages.login_page.LoginPage object at 0x108fa6a30&gt; = &lt;tests.test_login.TestLogin object at 0x108d5ce20&gt;.login_page">tests/test_login.py:116: in test_logout
+    assert self.login_page.is_login_page(), (
+E   AssertionError: After logout, should be back on login page
+E   assert False
+E    +  where False = is_login_page()
+E    +    where is_login_page = &lt;pages.login_page.LoginPage object at 0x108fa6a30&gt;.is_login_page
+E    +      where &lt;pages.login_page.LoginPage object at 0x108fa6a30&gt; = &lt;tests.test_login.TestLogin object at 0x108d5ce20&gt;.login_page</failure></testcase><testcase classname="tests.test_product.TestProduct" name="test_inventory_displays_6_products" time="1.541" /><testcase classname="tests.test_product.TestProduct" name="test_product_names_displayed" time="1.295" /><testcase classname="tests.test_product.TestProduct" name="test_product_prices_displayed" time="1.324" /><testcase classname="tests.test_product.TestProduct" name="test_product_images_loaded" time="1.282" /><testcase classname="tests.test_product.TestProduct" name="test_sort_name_a_to_z" time="1.355" /><testcase classname="tests.test_product.TestProduct" name="test_sort_name_z_to_a" time="1.325" /><testcase classname="tests.test_product.TestProduct" name="test_sort_price_low_to_high" time="1.355" /><testcase classname="tests.test_product.TestProduct" name="test_sort_price_high_to_low" time="1.314" /><testcase classname="tests.test_product.TestProduct" name="test_click_product_opens_detail" time="1.355" /><testcase classname="tests.test_product.TestProduct" name="test_product_detail_has_price_and_description" time="1.370" /><testcase classname="tests.test_product.TestProduct" name="test_back_button_returns_to_inventory" time="1.339" /><testcase classname="tests.test_product.TestProduct" name="test_problem_user_images_broken" time="1.337"><failure message="AssertionError: BUG: All product images are the same! Got 1 unique image(s) out of 6: https://www.saucedemo.com/static/media/sl-404.168b1cce10384b857a6f.jpg&#10;assert 1 &gt; 1&#10; +  where 1 = len({'https://www.saucedemo.com/static/media/sl-404.168b1cce10384b857a6f.jpg'})">tests/test_product.py:150: in test_problem_user_images_broken
+    assert len(unique_images) &gt; 1, (
+E   AssertionError: BUG: All product images are the same! Got 1 unique image(s) out of 6: https://www.saucedemo.com/static/media/sl-404.168b1cce10384b857a6f.jpg
+E   assert 1 &gt; 1
+E    +  where 1 = len({'https://www.saucedemo.com/static/media/sl-404.168b1cce10384b857a6f.jpg'})</failure></testcase><testcase classname="tests.test_product.TestProduct" name="test_problem_user_sort_name_az" time="1.287" /><testcase classname="tests.test_product.TestProduct" name="test_problem_user_sort_name_za" time="1.353"><failure message="AssertionError: BUG: Products not sorted Z-A for problem_user. Got: ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']&#10;assert ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)'] == ['Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Onesie', 'Sauce Labs Fleece Jacket', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Bike Light', 'Sauce Labs Backpack']&#10;  &#10;  At index 0 diff: 'Sauce Labs Backpack' != 'Test.allTheThings() T-Shirt (Red)'&#10;  &#10;  Full diff:&#10;    [&#10;  +     'Sauce Labs Backpack',&#10;  +     'Sauce Labs Bike Light',&#10;  +     'Sauce Labs Bolt T-Shirt',&#10;  +     'Sauce Labs Fleece Jacket',&#10;  +     'Sauce Labs Onesie',&#10;        'Test.allTheThings() T-Shirt (Red)',&#10;  -     'Sauce Labs Onesie',&#10;  -     'Sauce Labs Fleece Jacket',&#10;  -     'Sauce Labs Bolt T-Shirt',&#10;  -     'Sauce Labs Bike Light',&#10;  -     'Sauce Labs Backpack',&#10;    ]">tests/test_product.py:172: in test_problem_user_sort_name_za
+    assert names == sorted(names, reverse=True), (
+E   AssertionError: BUG: Products not sorted Z-A for problem_user. Got: ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)']
+E   assert ['Sauce Labs Backpack', 'Sauce Labs Bike Light', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Fleece Jacket', 'Sauce Labs Onesie', 'Test.allTheThings() T-Shirt (Red)'] == ['Test.allTheThings() T-Shirt (Red)', 'Sauce Labs Onesie', 'Sauce Labs Fleece Jacket', 'Sauce Labs Bolt T-Shirt', 'Sauce Labs Bike Light', 'Sauce Labs Backpack']
+E     
+E     At index 0 diff: 'Sauce Labs Backpack' != 'Test.allTheThings() T-Shirt (Red)'
+E     
+E     Full diff:
+E       [
+E     +     'Sauce Labs Backpack',
+E     +     'Sauce Labs Bike Light',
+E     +     'Sauce Labs Bolt T-Shirt',
+E     +     'Sauce Labs Fleece Jacket',
+E     +     'Sauce Labs Onesie',
+E           'Test.allTheThings() T-Shirt (Red)',
+E     -     'Sauce Labs Onesie',
+E     -     'Sauce Labs Fleece Jacket',
+E     -     'Sauce Labs Bolt T-Shirt',
+E     -     'Sauce Labs Bike Light',
+E     -     'Sauce Labs Backpack',
+E       ]</failure></testcase><testcase classname="tests.test_product.TestProduct" name="test_problem_user_sort_price_lohi" time="1.361"><failure message="AssertionError: BUG: Prices not sorted low-to-high for problem_user. Got: [29.99, 9.99, 15.99, 49.99, 7.99, 15.99]&#10;assert [29.99, 9.99, 15.99, 49.99, 7.99, 15.99] == [7.99, 9.99, 15.99, 15.99, 29.99, 49.99]&#10;  &#10;  At index 0 diff: 29.99 != 7.99&#10;  &#10;  Full diff:&#10;    [&#10;  -     7.99,&#10;  ?     ^&#10;  +     29.99,&#10;  ?     ^^&#10;        9.99,&#10;        15.99,&#10;  +     49.99,&#10;  +     7.99,&#10;        15.99,&#10;  -     29.99,&#10;  -     49.99,&#10;    ]">tests/test_product.py:182: in test_problem_user_sort_price_lohi
+    assert prices == sorted(prices), (
+E   AssertionError: BUG: Prices not sorted low-to-high for problem_user. Got: [29.99, 9.99, 15.99, 49.99, 7.99, 15.99]
+E   assert [29.99, 9.99, 15.99, 49.99, 7.99, 15.99] == [7.99, 9.99, 15.99, 15.99, 29.99, 49.99]
+E     
+E     At index 0 diff: 29.99 != 7.99
+E     
+E     Full diff:
+E       [
+E     -     7.99,
+E     ?     ^
+E     +     29.99,
+E     ?     ^^
+E           9.99,
+E           15.99,
+E     +     49.99,
+E     +     7.99,
+E           15.99,
+E     -     29.99,
+E     -     49.99,
+E       ]</failure></testcase><testcase classname="tests.test_product.TestProduct" name="test_problem_user_sort_price_hilo" time="1.300"><failure message="AssertionError: BUG: Prices not sorted high-to-low for problem_user. Got: [29.99, 9.99, 15.99, 49.99, 7.99, 15.99]&#10;assert [29.99, 9.99, 15.99, 49.99, 7.99, 15.99] == [49.99, 29.99, 15.99, 15.99, 9.99, 7.99]&#10;  &#10;  At index 0 diff: 29.99 != 49.99&#10;  &#10;  Full diff:&#10;    [&#10;  +     29.99,&#10;  +     9.99,&#10;  +     15.99,&#10;        49.99,&#10;  -     29.99,&#10;  ?     ^^&#10;  +     7.99,&#10;  ?     ^&#10;        15.99,&#10;  -     15.99,&#10;  -     9.99,&#10;  -     7.99,&#10;    ]">tests/test_product.py:192: in test_problem_user_sort_price_hilo
+    assert prices == sorted(prices, reverse=True), (
+E   AssertionError: BUG: Prices not sorted high-to-low for problem_user. Got: [29.99, 9.99, 15.99, 49.99, 7.99, 15.99]
+E   assert [29.99, 9.99, 15.99, 49.99, 7.99, 15.99] == [49.99, 29.99, 15.99, 15.99, 9.99, 7.99]
+E     
+E     At index 0 diff: 29.99 != 49.99
+E     
+E     Full diff:
+E       [
+E     +     29.99,
+E     +     9.99,
+E     +     15.99,
+E           49.99,
+E     -     29.99,
+E     ?     ^^
+E     +     7.99,
+E     ?     ^
+E           15.99,
+E     -     15.99,
+E     -     9.99,
+E     -     7.99,
+E       ]</failure></testcase><testcase classname="tests.test_product.TestProduct" name="test_problem_user_product_detail_image" time="1.321" /><testcase classname="tests.test_product.TestProduct" name="test_error_user_products_display" time="1.255" /><testcase classname="tests.test_product.TestProduct" name="test_error_user_sort_name_za" time="1.386"><failure message="selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Sorting is broken! This error has been reported to Backtrace.&#10;Message: unexpected alert open: {Alert text : Sorting is broken! This error has been reported to Backtrace.}&#10;  (Session info: chrome=147.0.7727.102)&#10;Stacktrace:&#10;0   chromedriver                        0x0000000100f6debc cxxbridge1$str$ptr + 3213376&#10;1   chromedriver                        0x0000000100f65e8c cxxbridge1$str$ptr + 3180560&#10;2   chromedriver                        0x0000000100a2b8d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096&#10;3   chromedriver                        0x0000000100ab3fe8 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 633964&#10;4   chromedriver                        0x0000000100a6927c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424&#10;5   chromedriver                        0x0000000100f2bf60 cxxbridge1$str$ptr + 2943204&#10;6   chromedriver                        0x0000000100f2f744 cxxbridge1$str$ptr + 2957512&#10;7   chromedriver                        0x0000000100f10e50 cxxbridge1$str$ptr + 2832340&#10;8   chromedriver                        0x0000000100f2ffc4 cxxbridge1$str$ptr + 2959688&#10;9   chromedriver                        0x0000000100f01828 cxxbridge1$str$ptr + 2769324&#10;10  chromedriver                        0x0000000100f54920 cxxbridge1$str$ptr + 3109540&#10;11  chromedriver                        0x0000000100f54a9c cxxbridge1$str$ptr + 3109920&#10;12  chromedriver                        0x0000000100f65ae4 cxxbridge1$str$ptr + 3179624&#10;13  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136&#10;14  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8">tests/test_product.py:220: in test_error_user_sort_name_za
+    names = self.inventory_page.get_product_names()
+pages/inventory_page.py:68: in get_product_names
+    elements = self.find_elements(self.ITEM_NAMES)
+pages/base_page.py:63: in find_elements
+    return self.driver.find_elements(*locator)
+.venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:967: in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {"using": by, "value": value})["value"] or []
+.venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:458: in execute
+    self.error_handler.check_response(response)
+.venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py:231: in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+E   selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Sorting is broken! This error has been reported to Backtrace.
+E   Message: unexpected alert open: {Alert text : Sorting is broken! This error has been reported to Backtrace.}
+E     (Session info: chrome=147.0.7727.102)
+E   Stacktrace:
+E   0   chromedriver                        0x0000000100f6debc cxxbridge1$str$ptr + 3213376
+E   1   chromedriver                        0x0000000100f65e8c cxxbridge1$str$ptr + 3180560
+E   2   chromedriver                        0x0000000100a2b8d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096
+E   3   chromedriver                        0x0000000100ab3fe8 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 633964
+E   4   chromedriver                        0x0000000100a6927c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424
+E   5   chromedriver                        0x0000000100f2bf60 cxxbridge1$str$ptr + 2943204
+E   6   chromedriver                        0x0000000100f2f744 cxxbridge1$str$ptr + 2957512
+E   7   chromedriver                        0x0000000100f10e50 cxxbridge1$str$ptr + 2832340
+E   8   chromedriver                        0x0000000100f2ffc4 cxxbridge1$str$ptr + 2959688
+E   9   chromedriver                        0x0000000100f01828 cxxbridge1$str$ptr + 2769324
+E   10  chromedriver                        0x0000000100f54920 cxxbridge1$str$ptr + 3109540
+E   11  chromedriver                        0x0000000100f54a9c cxxbridge1$str$ptr + 3109920
+E   12  chromedriver                        0x0000000100f65ae4 cxxbridge1$str$ptr + 3179624
+E   13  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136
+E   14  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8</failure></testcase><testcase classname="tests.test_product.TestProduct" name="test_error_user_sort_price_lohi" time="1.343"><failure message="selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Sorting is broken! This error has been reported to Backtrace.&#10;Message: unexpected alert open: {Alert text : Sorting is broken! This error has been reported to Backtrace.}&#10;  (Session info: chrome=147.0.7727.102)&#10;Stacktrace:&#10;0   chromedriver                        0x0000000104a19ebc cxxbridge1$str$ptr + 3213376&#10;1   chromedriver                        0x0000000104a11e8c cxxbridge1$str$ptr + 3180560&#10;2   chromedriver                        0x00000001044d78d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096&#10;3   chromedriver                        0x000000010455ffe8 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 633964&#10;4   chromedriver                        0x000000010451527c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424&#10;5   chromedriver                        0x00000001049d7f60 cxxbridge1$str$ptr + 2943204&#10;6   chromedriver                        0x00000001049db744 cxxbridge1$str$ptr + 2957512&#10;7   chromedriver                        0x00000001049bce50 cxxbridge1$str$ptr + 2832340&#10;8   chromedriver                        0x00000001049dbfc4 cxxbridge1$str$ptr + 2959688&#10;9   chromedriver                        0x00000001049ad828 cxxbridge1$str$ptr + 2769324&#10;10  chromedriver                        0x0000000104a00920 cxxbridge1$str$ptr + 3109540&#10;11  chromedriver                        0x0000000104a00a9c cxxbridge1$str$ptr + 3109920&#10;12  chromedriver                        0x0000000104a11ae4 cxxbridge1$str$ptr + 3179624&#10;13  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136&#10;14  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8">tests/test_product.py:230: in test_error_user_sort_price_lohi
+    prices = self.inventory_page.get_product_prices_float()
+pages/inventory_page.py:78: in get_product_prices_float
+    prices = self.get_product_prices()
+pages/inventory_page.py:73: in get_product_prices
+    elements = self.find_elements(self.ITEM_PRICES)
+pages/base_page.py:63: in find_elements
+    return self.driver.find_elements(*locator)
+.venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:967: in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {"using": by, "value": value})["value"] or []
+.venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:458: in execute
+    self.error_handler.check_response(response)
+.venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py:231: in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+E   selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Sorting is broken! This error has been reported to Backtrace.
+E   Message: unexpected alert open: {Alert text : Sorting is broken! This error has been reported to Backtrace.}
+E     (Session info: chrome=147.0.7727.102)
+E   Stacktrace:
+E   0   chromedriver                        0x0000000104a19ebc cxxbridge1$str$ptr + 3213376
+E   1   chromedriver                        0x0000000104a11e8c cxxbridge1$str$ptr + 3180560
+E   2   chromedriver                        0x00000001044d78d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096
+E   3   chromedriver                        0x000000010455ffe8 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 633964
+E   4   chromedriver                        0x000000010451527c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424
+E   5   chromedriver                        0x00000001049d7f60 cxxbridge1$str$ptr + 2943204
+E   6   chromedriver                        0x00000001049db744 cxxbridge1$str$ptr + 2957512
+E   7   chromedriver                        0x00000001049bce50 cxxbridge1$str$ptr + 2832340
+E   8   chromedriver                        0x00000001049dbfc4 cxxbridge1$str$ptr + 2959688
+E   9   chromedriver                        0x00000001049ad828 cxxbridge1$str$ptr + 2769324
+E   10  chromedriver                        0x0000000104a00920 cxxbridge1$str$ptr + 3109540
+E   11  chromedriver                        0x0000000104a00a9c cxxbridge1$str$ptr + 3109920
+E   12  chromedriver                        0x0000000104a11ae4 cxxbridge1$str$ptr + 3179624
+E   13  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136
+E   14  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8</failure></testcase><testcase classname="tests.test_product.TestProduct" name="test_error_user_sort_price_hilo" time="1.324"><failure message="selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Sorting is broken! This error has been reported to Backtrace.&#10;Message: unexpected alert open: {Alert text : Sorting is broken! This error has been reported to Backtrace.}&#10;  (Session info: chrome=147.0.7727.102)&#10;Stacktrace:&#10;0   chromedriver                        0x0000000104c4debc cxxbridge1$str$ptr + 3213376&#10;1   chromedriver                        0x0000000104c45e8c cxxbridge1$str$ptr + 3180560&#10;2   chromedriver                        0x000000010470b8d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096&#10;3   chromedriver                        0x0000000104793fe8 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 633964&#10;4   chromedriver                        0x000000010474927c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424&#10;5   chromedriver                        0x0000000104c0bf60 cxxbridge1$str$ptr + 2943204&#10;6   chromedriver                        0x0000000104c0f744 cxxbridge1$str$ptr + 2957512&#10;7   chromedriver                        0x0000000104bf0e50 cxxbridge1$str$ptr + 2832340&#10;8   chromedriver                        0x0000000104c0ffc4 cxxbridge1$str$ptr + 2959688&#10;9   chromedriver                        0x0000000104be1828 cxxbridge1$str$ptr + 2769324&#10;10  chromedriver                        0x0000000104c34920 cxxbridge1$str$ptr + 3109540&#10;11  chromedriver                        0x0000000104c34a9c cxxbridge1$str$ptr + 3109920&#10;12  chromedriver                        0x0000000104c45ae4 cxxbridge1$str$ptr + 3179624&#10;13  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136&#10;14  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8">tests/test_product.py:240: in test_error_user_sort_price_hilo
+    prices = self.inventory_page.get_product_prices_float()
+pages/inventory_page.py:78: in get_product_prices_float
+    prices = self.get_product_prices()
+pages/inventory_page.py:73: in get_product_prices
+    elements = self.find_elements(self.ITEM_PRICES)
+pages/base_page.py:63: in find_elements
+    return self.driver.find_elements(*locator)
+.venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:967: in find_elements
+    return self.execute(Command.FIND_ELEMENTS, {"using": by, "value": value})["value"] or []
+.venv/lib/python3.9/site-packages/selenium/webdriver/remote/webdriver.py:458: in execute
+    self.error_handler.check_response(response)
+.venv/lib/python3.9/site-packages/selenium/webdriver/remote/errorhandler.py:231: in check_response
+    raise exception_class(message, screen, stacktrace, alert_text)  # type: ignore[call-arg]  # mypy is not smart enough here
+E   selenium.common.exceptions.UnexpectedAlertPresentException: Alert Text: Sorting is broken! This error has been reported to Backtrace.
+E   Message: unexpected alert open: {Alert text : Sorting is broken! This error has been reported to Backtrace.}
+E     (Session info: chrome=147.0.7727.102)
+E   Stacktrace:
+E   0   chromedriver                        0x0000000104c4debc cxxbridge1$str$ptr + 3213376
+E   1   chromedriver                        0x0000000104c45e8c cxxbridge1$str$ptr + 3180560
+E   2   chromedriver                        0x000000010470b8d4 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 75096
+E   3   chromedriver                        0x0000000104793fe8 _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 633964
+E   4   chromedriver                        0x000000010474927c _RNvCs10ygTOo3JCa_7___rustc35___rust_no_alloc_shim_is_unstable_v2 + 327424
+E   5   chromedriver                        0x0000000104c0bf60 cxxbridge1$str$ptr + 2943204
+E   6   chromedriver                        0x0000000104c0f744 cxxbridge1$str$ptr + 2957512
+E   7   chromedriver                        0x0000000104bf0e50 cxxbridge1$str$ptr + 2832340
+E   8   chromedriver                        0x0000000104c0ffc4 cxxbridge1$str$ptr + 2959688
+E   9   chromedriver                        0x0000000104be1828 cxxbridge1$str$ptr + 2769324
+E   10  chromedriver                        0x0000000104c34920 cxxbridge1$str$ptr + 3109540
+E   11  chromedriver                        0x0000000104c34a9c cxxbridge1$str$ptr + 3109920
+E   12  chromedriver                        0x0000000104c45ae4 cxxbridge1$str$ptr + 3179624
+E   13  libsystem_pthread.dylib             0x000000018fd5fc58 _pthread_start + 136
+E   14  libsystem_pthread.dylib             0x000000018fd5ac1c thread_start + 8</failure></testcase></testsuite></testsuites>
